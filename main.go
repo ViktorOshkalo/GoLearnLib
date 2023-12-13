@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
-	"main/calculator"
+
+	calc "github.com/ViktorOshkalo/GoLearnLib/calculator"
 )
 
 func main() {
-	res := calculator.Add(1, 2)
+	res := calc.Add(1, 2)
 	fmt.Println(res)
 }
