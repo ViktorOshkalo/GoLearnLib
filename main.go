@@ -3,20 +3,17 @@ package main
 import (
 	"fmt"
 
-	calc "github.com/ViktorOshkalo/GoLearnLib/calculator"
+	bl "github.com/ViktorOshkalo/GoLearnLib/blockchain"
 )
 
 func main() {
-	// how to do tests?
-	add := calc.Add(1, 2.5)
-	fmt.Println(add)
+	// create a new blockchain instance with a mining difficulty of 2
+	blockchain := bl.CreateBlockchain(2)
 
-	distr := calc.Distract(1, 2.5)
-	fmt.Println(distr)
+	// record transactions on the blockchain for John, Mark, and Richard
+	blockchain.AddBlock("John", "Mark", 10)
+	blockchain.AddBlock("Mark", "Richard", 15)
 
-	mult := calc.Multiply(1, 2.5)
-	fmt.Println(mult)
-
-	div := calc.Divide(1, 2.5)
-	fmt.Println(div)
+	// check if the blockchain is valid; expecting true
+	fmt.Println(blockchain.IsValid())
 }
